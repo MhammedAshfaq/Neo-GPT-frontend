@@ -1,0 +1,50 @@
+.list { display: flex; flex-direction: column; gap: 2px; padding-bottom: 8px; }
+
+.group { margin-bottom: 8px; }
+
+.groupLabel {
+  font-size: 11px; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 0.4px; text-transform: uppercase;
+  padding: 4px 8px 6px; margin-bottom: 2px;
+}
+
+.item {
+  position: relative; display: flex; align-items: center;
+  padding: 9px 10px; border-radius: 8px; cursor: pointer;
+  transition: background 120ms; gap: 8px;
+  border-left: 2px solid transparent;
+}
+.item:hover { background: var(--bg-elevated); }
+.item.active {
+  background: var(--bg-active);
+  border-left-color: var(--primary-500);
+}
+
+.title {
+  flex: 1; font-size: 13px; color: var(--text-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  line-height: 1.4;
+}
+.item.active .title { color: var(--text-primary); font-weight: 500; }
+
+.actions { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+
+.actionBtn {
+  width: 24px; height: 24px; border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  transition: background 120ms, color 120ms;
+}
+.actionBtn:hover { background: var(--bg-hover); color: var(--text-secondary); }
+.deleteBtn:hover { background: rgba(239,68,68,0.15); color: #f87171; }
+
+.renameInput {
+  width: 100%; background: var(--bg-elevated); border: 1px solid var(--primary-500);
+  border-radius: 6px; color: var(--text-primary); font-size: 13px;
+  font-family: var(--font-sans); padding: 4px 8px; outline: none;
+}
+
+.empty {
+  text-align: center; padding: 32px 16px;
+  color: var(--text-muted); font-size: 13px; line-height: 1.8;
+}

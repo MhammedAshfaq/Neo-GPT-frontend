@@ -1,0 +1,88 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.backBtn {
+  display: flex; align-items: center; gap: 6px;
+  color: #8e8e9f; font-size: 13px; font-weight: 500;
+  background: none; border: none; cursor: pointer; width: fit-content;
+  padding: 4px 0; transition: color 150ms;
+}
+.backBtn:hover { color: #ececec; }
+
+.emailDisplay {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13.5px; color: #8e8e9f;
+  background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 9999px; padding: 10px 16px;
+}
+
+.passTitle {
+  font-size: 20px; font-weight: 700; color: #ececec;
+  margin: 4px 0; text-align: center;
+}
+
+.inputWrap { position: relative; }
+
+.input {
+  width: 100%; padding: 13px 24px;
+  background: #000000; /* ChatGPT black input background */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px; /* Pill-shaped */
+  color: #ffffff;
+  font-size: 15px; font-family: var(--font-sans);
+  outline: none; transition: border-color 200ms;
+}
+.input::placeholder { color: #8e8e9f; }
+.input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.showPassBtn {
+  position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: #8e8e9f; cursor: pointer;
+  display: flex; align-items: center; padding: 4px;
+  transition: color 150ms;
+}
+.showPassBtn:hover { color: #ececec; }
+
+.forgotLink {
+  font-size: 13px; color: #ececec; text-decoration: underline;
+  align-self: flex-end; transition: opacity 150ms;
+}
+.forgotLink:hover { opacity: 0.8; }
+
+.continueBtn {
+  width: 100%; padding: 13px 24px;
+  border-radius: 9999px; border: none;
+  background: #ffffff; /* ChatGPT solid white continue button */
+  color: #0f0f0f; font-size: 15px; font-weight: 600;
+  font-family: var(--font-sans); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background 150ms ease; margin-top: 4px;
+  box-shadow: none;
+}
+.continueBtn:hover:not(:disabled) {
+  background: #e6e6e6;
+}
+.continueBtn:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.footer {
+  text-align: center; font-size: 13px; color: #8e8e9f;
+  margin-top: 8px;
+}
+
+.switchLink {
+  background: none; border: none; color: #ffffff;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: opacity 150ms; font-family: var(--font-sans);
+  text-decoration: underline;
+}
+.switchLink:hover { opacity: 0.8; }

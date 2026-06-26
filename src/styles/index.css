@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════════════
+   NEO GPT — Global Design System
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Backgrounds (ChatGPT Dark Mode Default) */
+  --bg-base:     #212121;
+  --bg-sidebar:  #171717;
+  --bg-surface:  #2f2f2f;
+  --bg-elevated: #2f2f2f;
+  --bg-hover:    rgba(255, 255, 255, 0.08);
+  --bg-active:   rgba(255, 255, 255, 0.12);
+
+  /* Primary — Premium Purple */
+  --primary-300: #c4b0ff;
+  --primary-400: #9070ff;
+  --primary-500: #7c3aed;
+  --primary-600: #6d28d9;
+  --primary-700: #5b21b6;
+
+  /* Secondary — Cyan */
+  --secondary-400: #22d3ee;
+  --secondary-500: #06b6d4;
+
+  /* Text */
+  --text-primary:     #ececec;
+  --text-secondary:   #b4b4b4;
+  --text-muted:       #8e8e9f;
+  --text-placeholder: #6b6b7a;
+
+  /* Borders */
+  --border-subtle:  rgba(255,255,255,0.05);
+  --border-default: rgba(255,255,255,0.12);
+  --border-strong:  rgba(255,255,255,0.20);
+  --border-accent:  rgba(124,58,237,0.45);
+
+  /* Semantic */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error:   #ef4444;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Sidebar width */
+  --sidebar-width: 260px;
+}
+
+/* ── Light Theme Overrides (ChatGPT Light Mode) ── */
+[data-theme="light"] {
+  --bg-base:     #ffffff;
+  --bg-sidebar:  #f9f9f9;
+  --bg-surface:  #f4f4f4;
+  --bg-elevated: #ececec;
+  --bg-hover:    rgba(0, 0, 0, 0.05);
+  --bg-active:   rgba(0, 0, 0, 0.08);
+  --border-subtle:  rgba(0,0,0,0.05);
+  --border-default: rgba(0,0,0,0.10);
+  --border-strong:  rgba(0,0,0,0.18);
+  --text-primary:     #0d0d0d;
+  --text-secondary:   #676767;
+  --text-muted:       #8e8e9f;
+  --text-placeholder: #b0accc;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#root { height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* ── Smooth spin for loading icons ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

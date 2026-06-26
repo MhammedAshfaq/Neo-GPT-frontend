@@ -1,0 +1,41 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 24px; /* ChatGPT taller buttons */
+  border-radius: 9999px; /* Pill-shaped */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #ffffff; /* Brighter white for premium contrast */
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08); /* Slightly more visible hover */
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #c5c5d2;
+}
+
+.label {
+  /* Let flex flow naturally to center with the icon */
+  font-weight: 500;
+}

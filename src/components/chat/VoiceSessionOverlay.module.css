@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000000; /* Pure black fullscreen canvas */
+  z-index: 3000; /* Higher than pricing modal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 24px;
+  font-family: var(--font-sans);
+  color: #ffffff;
+  overflow: hidden;
+  animation: overlayFadeIn 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brandIcon {
+  color: #3b82f6;
+  animation: rotateLogo 10s linear infinite;
+}
+
+.brandText {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.secureText {
+  font-size: 12px;
+  color: #525252;
+  font-weight: 500;
+}
+
+/* Center Orb Canvas */
+.centerArea {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.glowBg {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.2) 0%, rgba(20, 184, 166, 0.15) 40%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(40px);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity 150ms ease-out;
+  z-index: 1;
+}
+
+.orbWrapper {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.voiceOrb {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #3b82f6 0%, #14b8a6 60%, #1e1b4b 100%);
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.4), 0 0 100px rgba(20, 184, 166, 0.2);
+  transition: transform 80ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.voiceOrb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.orbInner {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Status row */
+.statusWrap {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.statusText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ececec;
+  letter-spacing: -0.1px;
+}
+
+.listeningPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #14b8a6;
+  animation: pulseGreen 1.5s infinite;
+}
+
+/* Controls Bar at bottom */
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.controlBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(23, 23, 23, 0.6);
+  color: #ececec;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms, border-color 150ms, transform 100ms;
+}
+
+.controlBtn:hover {
+  background: rgba(38, 38, 38, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.controlBtn:active {
+  transform: scale(0.95);
+}
+
+.mutedActive {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.speakerOff {
+  color: #6e6e6e !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.endCallBtn {
+  width: 64px;
+  height: 64px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+}
+
+.endCallBtn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Animations */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+}

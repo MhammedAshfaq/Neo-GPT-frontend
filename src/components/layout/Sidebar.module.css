@@ -1,0 +1,174 @@
+.sidebar {
+  display: flex; flex-direction: column;
+  height: 100%; overflow: hidden;
+  padding: 8px;
+  background: var(--bg-sidebar);
+}
+
+/* Top Header */
+.topHeader {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 4px 8px 12px;
+}
+
+.logo {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--text-primary);
+}
+
+.logoIcon {
+  color: var(--text-secondary);
+}
+
+.logoText {
+  font-size: 15px; font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.panelToggleBtn {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 150ms, color 150ms;
+}
+.panelToggleBtn:hover {
+  background: var(--bg-hover); color: var(--text-primary);
+}
+
+/* Main Navigation */
+.mainNav {
+  display: flex; flex-direction: column; gap: 8px;
+  padding-bottom: 8px;
+}
+
+/* New Chat Pill */
+.newChatBtn {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 10px 12px;
+  border-radius: 8px; border: none;
+  background: none; color: var(--text-primary);
+  font-size: 14px; font-weight: 500;
+  font-family: var(--font-sans); cursor: pointer;
+  transition: background 150ms;
+}
+.newChatBtn:hover {
+  background: var(--bg-hover);
+}
+
+/* Search Box */
+.searchWrap {
+  position: relative; padding: 0 4px;
+}
+.searchIcon {
+  position: absolute; left: 16px; top: 50%;
+  transform: translateY(-50%); color: var(--text-muted);
+  pointer-events: none;
+}
+.searchInput {
+  width: 100%; padding: 8px 12px 8px 34px;
+  background: var(--bg-base); border: 1px solid transparent;
+  border-radius: 8px; color: var(--text-primary); font-size: 13px;
+  font-family: var(--font-sans); outline: none;
+  transition: border-color 200ms;
+}
+.searchInput::placeholder { color: var(--text-muted); }
+.searchInput:focus { border-color: var(--border-default); }
+
+/* Links list */
+.staticLinks {
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.navLink {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 9px 12px;
+  border-radius: 8px; border: none; background: none;
+  color: var(--text-primary); font-size: 13px; font-weight: 400;
+  font-family: var(--font-sans); cursor: pointer;
+  transition: background 150ms;
+  text-align: left;
+}
+.navLink:hover { background: var(--bg-hover); }
+
+.navLink svg {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* Conversations (Middle Scroll) */
+.convList {
+  flex: 1; overflow-y: auto; padding: 4px 4px 12px;
+  margin: 4px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Scrollbar styling */
+.convList::-webkit-scrollbar { width: 6px; }
+.convList::-webkit-scrollbar-track { background: transparent; }
+.convList::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 4px; }
+.convList::-webkit-scrollbar-thumb:hover { background: var(--border-default); }
+
+/* Bottom navigation section */
+.bottom {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.bottomNav {
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+/* Profile Row */
+.userRow {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: 8px;
+  transition: background 150ms;
+}
+.userRow:hover { background: var(--bg-hover); }
+
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: white;
+  flex-shrink: 0; overflow: hidden;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.userInfo { flex: 1; min-width: 0; }
+.userName  { display: block; font-size: 13px; font-weight: 500; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.userEmail { display: block; font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.logoutBtn {
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none;
+  color: var(--text-muted); cursor: pointer;
+  transition: background 150ms, color 150ms; flex-shrink: 0;
+}
+.logoutBtn:hover { background: rgba(239, 68, 68, 0.1); color: var(--error); }
+
+/* Login Card Spec */
+.loginCard {
+  padding: 12px; border-radius: 8px;
+  display: flex; flex-direction: column; gap: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.loginCardTitle {
+  font-size: 13px; font-weight: 600; color: var(--text-primary);
+}
+
+.loginCardText {
+  font-size: 12px; color: var(--text-muted); line-height: 1.4;
+}
+
+.loginCardBtn {
+  width: 100%; padding: 9px; border-radius: 9999px; border: 1px solid var(--border-default);
+  background: var(--bg-elevated); color: var(--text-primary); font-weight: 600; font-size: 13px;
+  cursor: pointer; margin-top: 4px; transition: background 150ms;
+}
+.loginCardBtn:hover { background: var(--bg-hover); }
