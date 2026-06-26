@@ -66,7 +66,7 @@ const RATIO_OPTIONS = [
 
 const getRatioOption = (val) => RATIO_OPTIONS.find(o => o.value === val) || RATIO_OPTIONS[0];
 
-export default function ChatInputArea() {
+export default function ChatInputArea({ isCentered = false }) {
   const { sendMessage, isLoading } = useChat();
   const { 
     webSearchActive, setWebSearchActive, toggleWebSearch,
@@ -396,7 +396,7 @@ export default function ChatInputArea() {
   };
 
   return (
-    <div className={styles.outerWrap}>
+    <div className={isCentered ? styles.centeredWrap : styles.outerWrap}>
       <div className={styles.inputContainer}>
         
         {/* Attachment popover action menu */}
@@ -844,10 +844,6 @@ export default function ChatInputArea() {
           </form>
         )}
 
-      </div>
-      
-      <div className={styles.disclaimer}>
-        ChatGPT can make mistakes. Check important info.
       </div>
     </div>
   );

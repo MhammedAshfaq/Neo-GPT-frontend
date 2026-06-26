@@ -8,6 +8,13 @@
   flex-shrink: 0;
 }
 
+.centeredWrap {
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+}
+
 /* Relative container holding popover and input card */
 .inputContainer {
   position: relative;

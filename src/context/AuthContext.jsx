@@ -10,6 +10,7 @@ const USER_KEY  = 'neo-gpt-user';
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading]       = useState(false);
+  const [authChecked, setAuthChecked]   = useState(false);
 
   useEffect(() => {
     try {
@@ -19,6 +20,8 @@ export function AuthProvider({ children }) {
       }
     } catch (e) {
       console.error('Failed to restore auth user', e);
+    } finally {
+      setAuthChecked(true);
     }
   }, []);
   const [authStep, setAuthStep]         = useState('idle'); // idle|email|password|otp|onboarding
@@ -153,7 +156,7 @@ export function AuthProvider({ children }) {
       showAuthModal, pendingEmail, error,
       openAuth, closeAuth, submitEmail,
       login, register, verifyOtp, completeOnboarding,
-      socialLogin, logout, goBack,
+      socialLogin, logout, goBack, authChecked,
     }}>
       {children}
     </AuthContext.Provider>
